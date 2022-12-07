@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.bookms.mapper.RecordMapper">
+    <insert id="brownBook">
+        insert into lend_list
+        values (null, #{bookId}, #{readerId}, #{lendDate}, #{backDate})
+    </insert>
+    <delete id="returnBook">
+        delete
+        from lend_list
+        where reader_id = #{readerId}
+          and book_id = #{bookId}
+    </delete>
+
+    <select id="getAllRecord" resultType="Record">
+        select *
+        from lend_list
+    </select>
+
+    <select id="selectReaderRecord" resultType="Record">
+        select *
+        from lend_list
+        where reader_id = #{readerId}
+    </select>
+
+    <select id="selectPage" resultType="com.book.bookms.pojo.Record">
+        select *
+        from lend_list limit #{pageNum},#{pageSize}
+    </select>
+
+    <select id="selectTotal" resultType="java.lang.Integer">
+        select count(*)
+        from lend_list
+    </select>
+</mapper>

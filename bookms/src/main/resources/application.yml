@@ -1,0 +1,13 @@
+spring:
+  freemarker:
+    check-template-location: false
+  profiles:
+    active: dev
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.book.bookms.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+
+#java -jar startup-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
