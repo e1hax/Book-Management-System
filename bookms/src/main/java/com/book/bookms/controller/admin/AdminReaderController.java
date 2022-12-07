@@ -58,7 +58,8 @@ public class AdminReaderController {
     @PutMapping("/updateGs")
     public R<String> updateGs(@RequestBody ReaderDto readerDto) {
 
-        if (readerDto.getReaderId() != null && ("1".equals(readerDto.getStatus()) || "0".equals(readerDto.getStatus()))) {
+        if (readerDto.getReaderId() != null && ("1".equals(readerDto.getStatus())
+                || "0".equals(readerDto.getStatus()))) {
             readerMapper.checkReader_gs(readerDto.getReaderId(), readerDto.getStatus());
             userMapper.checkUser_gs(readerDto.getReaderId(), readerDto.getStatus());
             return R.success("状态更新成功");
@@ -74,7 +75,8 @@ public class AdminReaderController {
      */
     @PutMapping("/updateStatus")
     public R<String> updateStatus(@RequestBody ReaderDto readerDto) {
-        if (readerDto.getReaderId() != null && ("1".equals(readerDto.getStatus()) || "0".equals(readerDto.getStatus()))) {
+        if (readerDto.getReaderId() != null && ("1".equals(readerDto.getStatus())
+                || "0".equals(readerDto.getStatus()))) {
             readerMapper.checkReader_status(readerDto.getReaderId(), readerDto.getStatus());
             userMapper.checkUser_status(readerDto.getReaderId(), readerDto.getStatus());
             return R.success("状态更新成功");
