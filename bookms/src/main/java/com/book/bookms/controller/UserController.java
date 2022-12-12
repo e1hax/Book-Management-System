@@ -29,7 +29,8 @@ public class UserController {
             return R.error("旧密码有误");
         }
         //修改密码
-        userMapper.changePassword(changePasswdVo.getUserName(),DigestUtils.md5DigestAsHex((changePasswdVo.getNewPassword().getBytes())));
+        userMapper.changePassword(changePasswdVo.getUserName(),
+                DigestUtils.md5DigestAsHex((changePasswdVo.getNewPassword().getBytes())));
         return R.success("密码修改成功");
     }
 

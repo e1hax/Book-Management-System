@@ -10,7 +10,6 @@ import lombok.Data;
 @Data
 public class UserDto {
     private User user;
-
     private Reader reader;
 }
 

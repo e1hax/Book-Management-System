@@ -12,6 +12,7 @@
     </update>
 
     <update id="checkUser_gs">
+
         update user set gs = #{status} where username=#{username}
     </update>
 

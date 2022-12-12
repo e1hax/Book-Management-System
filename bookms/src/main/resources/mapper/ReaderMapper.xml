@@ -51,6 +51,7 @@
         where reader_id = #{readerId}
     </update>
 
+
     <insert id="addReader">
         insert into reader_info
         values (#{readerId}, #{name}, #{sex}, #{birth}, #{address}, #{telcode}, 1, 1)

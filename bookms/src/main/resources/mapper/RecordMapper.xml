@@ -27,13 +27,15 @@
         where reader_id = #{readerId}
     </select>
 
+    <select id="selectTotal" resultType="java.lang.Integer">
+        select count(*)
+        from lend_list
+    </select>
+
     <select id="selectPage" resultType="com.book.bookms.pojo.Record">
         select *
         from lend_list limit #{pageNum},#{pageSize}
     </select>
 
-    <select id="selectTotal" resultType="java.lang.Integer">
-        select count(*)
-        from lend_list
-    </select>
+
 </mapper>

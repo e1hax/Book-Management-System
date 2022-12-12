@@ -30,7 +30,7 @@ public class AdminRecordController {
 
 
     /**
-     * 分页获取所有借还记录
+     * 分页获取所有借阅记录
      * @return
      */
     @GetMapping("/page")
